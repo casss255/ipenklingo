@@ -1,11 +1,15 @@
 // Ganti angka versi ini setiap kali index.html diubah agar HP mengambil versi baru.
-const VERSION = 'lingo-v2';
+const VERSION = 'lingo-v3';
 // Several apps share this origin (casss255.github.io), so only touch caches that belong to this one.
 const PREFIX = 'lingo-';
-const SHELL = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
+const SHELL = [
+  './', './index.html', './style.css', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png',
+  './util.js', './icons.js', './courses-en.js', './courses-zh.js', './courses.js', './judge.js', './lesson.js',
+  './state.js', './speech.js', './views.js', './app.js',
+];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(VERSION).then(c => Promise.all(SHELL.map(u => c.add(new Request(u, { cache: 'reload' }))))).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith(PREFIX) && k !== VERSION).map(k => caches.delete(k)))).then(() => self.clients.claim()));
