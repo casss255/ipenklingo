@@ -53,7 +53,7 @@ svg { display: block; }
 #view { max-width: 880px; margin: 0 auto; padding: 0 16px calc(84px + env(safe-area-inset-bottom, 0px)); }
 .appbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 58px; margin: 0 -16px; padding: 0 16px; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; letter-spacing: -.01em; }
-.brand svg { width: 28px; height: 28px; color: var(--accent); }
+.brand svg { width: 30px; height: 30px; }
 .chip { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: 16px; border: 1px solid var(--line-strong); background: var(--surface); font-size: 13px; font-weight: 600; }
 .chip svg { width: 16px; height: 16px; color: var(--muted); }
 .tag { display: inline-block; padding: 2px 8px; border-radius: 6px; background: var(--sunk); color: var(--ink-2); font-size: 12px; font-weight: 600; }
@@ -244,7 +244,7 @@ body.in-lesson #view { padding-bottom: 0; min-height: 100vh; min-height: 100dvh;
 /* ---------- Welcome ---------- */
 .welcome { max-width: 440px; margin: 0 auto; min-height: 88vh; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
 .welcome .brand { font-size: 20px; }
-.welcome .brand svg { width: 36px; height: 36px; }
+.welcome .brand svg { width: 44px; height: 44px; }
 .welcome h1 { font-size: 30px; font-weight: 700; letter-spacing: -.025em; line-height: 1.15; }
 .welcome p { color: var(--muted); font-size: 15px; }
 .facts { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--muted); }

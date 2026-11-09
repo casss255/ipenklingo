@@ -1,5 +1,5 @@
 // Ganti angka versi ini setiap kali index.html diubah agar HP mengambil versi baru.
-const VERSION = 'lingo-v3';
+const VERSION = 'lingo-v4';
 // Several apps share this origin (casss255.github.io), so only touch caches that belong to this one.
 const PREFIX = 'lingo-';
 const SHELL = [
